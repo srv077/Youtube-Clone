@@ -15,7 +15,6 @@ export default class App extends Component {
  
   handleSubmit=async(searchTerm)=>{
     // Event.preventDefault();
-    console.log(searchTerm);
     //we make this asychronous function beacuse we are fetching data 
     const response = await youtube.get('search',{ params:{
       //The part parameter is a required parameter for any API request that retrieves or returns a resource. 
