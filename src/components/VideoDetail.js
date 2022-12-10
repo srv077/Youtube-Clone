@@ -3,7 +3,7 @@ import { Paper,Typography } from '@mui/material'
 import { height, padding } from '@mui/system'
 
 export default function VideoDetail({video}) {
-    if(!video) return <div style={{color:white}}>Loading....</div>
+    if(!video) return <div style={{color:'white'}}>Loading....</div>
     const videosrc=`https://www.youtube.com/embed/${video.id.videoId}`
   return (
     <React.Fragment >
