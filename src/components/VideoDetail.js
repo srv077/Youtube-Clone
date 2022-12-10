@@ -3,9 +3,8 @@ import { Paper,Typography } from '@mui/material'
 import { height, padding } from '@mui/system'
 
 export default function VideoDetail({video}) {
-    if(!video) return <div>Loading....</div>
+    if(!video) return <div style={{color:white}}>Loading....</div>
     const videosrc=`https://www.youtube.com/embed/${video.id.videoId}`
-    console.log(video)
   return (
     <React.Fragment >
         <Paper elevation={6} style={{height:'80vh', width:'50vw',marginLeft:'40px'}}>
