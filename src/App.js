@@ -27,6 +27,11 @@ export default class App extends Component {
     //params q beacuse parameter query 
     this.setState({videos: response.data.items,selectedVideo:response.data.items[0]})
   }  
+
+  componentDidMount(){
+    this.handleSubmit('symphony')
+  }
+
   onVideoSelect=(video)=>{
      this.setState({selectedVideo:video})
   }

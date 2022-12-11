@@ -13,7 +13,6 @@ export default function SearchBar(props) {
     }
     const handleSubmit=(e)=>{
         e.preventDefault();
-        console.log(props);
         props.onFormSubmit(searchTerm);
     }
     return (
