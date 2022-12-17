@@ -16,10 +16,10 @@ export default function SearchBar(props) {
         props.onFormSubmit(searchTerm);
     }
     return (
-        <div style={{display:'flex',justifyContent:'center'}}>
-         <Paper elevation={6} style={{padding:'15px',width:'50%',backgroundColor:'#242582',borderRadius:'30px' }}>
+        <div style={{display:'flex',justifyContent:'center',color:'white'}}>
+         <Paper elevation={6} style={{padding:'15px',width:'50%',backgroundColor:'#190061', color:'white',borderRadius:'30px' }}>
           <form onSubmit={(e)=>{handleSubmit(e);return false}}>
-              <TextField style={{width:'100%',backgroundColor:'white',color:'black',borderRadius:'30px' }} label="Search ...." onChange={handleChange}/>
+              <TextField sx={{ input: { color: 'white' } }} style={{width:'100%',backgroundColor:'282828',color:'white',borderRadius:'30px' }} label="Search ...." onChange={handleChange}/>
           </form>
          </Paper>
         </div>

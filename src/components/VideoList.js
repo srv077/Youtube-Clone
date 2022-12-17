@@ -4,7 +4,7 @@ import VideoItem from './VideoItem'
 export default function videoList({videos,onVideoSelect}) {
     const list=videos.map((video,id)=><VideoItem onVideoSelect={onVideoSelect} key={id} video={video}/>)
   return (
-    <Grid container spacing={3} style={{width:'10%',marginTop:'10px'}}>
+    <Grid container spacing={3} style={{width:'10%',marginTop:'10px',background:'282828'}}>
         <Paper elevation={5}>{list}</Paper>
     </Grid>
     );
