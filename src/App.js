@@ -1,16 +1,16 @@
-import ReactDOM from "react-dom/client";
+import React from 'react'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Searchpage from "./Searchpage";
+import Searchpage from "../src/components/Searchpage.js";
 import Home from "./Home";
-import { SearchBar } from "./components";
-import VideoItem from "./components/VideoItem";
+
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-         <Route index  element={<Home />} />
-         <Route path='s' element={<Searchpage />} />
+         <Route index path="/" element={<Home />} />
+         <Route  path="/search" element={<Searchpage />} />
+         <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );

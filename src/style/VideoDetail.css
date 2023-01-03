@@ -1,0 +1,29 @@
+#videodetailfull{
+    height:70vh;
+    width:100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#videodetailfull>iframe{
+    border-radius: 50px 50px 0px 0px;
+}
+#videodetaillist{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    color: black;
+}
+#videodetaillist>div{
+    padding:1%;
+    width: 61%;
+    background-color: aliceblue;
+    border-radius: 0px 0px 50px 50px;
+}
+.videodetaillist{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
