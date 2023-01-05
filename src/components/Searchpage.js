@@ -34,6 +34,7 @@ export default function Seachpage() {
         <Header onFormSubmit={handleSubmit} />
         <div style={{height:'20vh'}}></div>
         <VideoDetail video={selectedVideo} />
+        <br></br>
         <VideoList videos={videos} onVideoSelect={onVideoSelect}/>
       </div>
     )

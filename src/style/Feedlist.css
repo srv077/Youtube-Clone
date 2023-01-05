@@ -50,7 +50,7 @@
    height: 100%;
 }
 #feedlist-item{
-   width:85%;
+   width:90%;
    display: flex;
    flex-direction: row;
    justify-content: space-evenly;
@@ -58,16 +58,28 @@
 }
 #feedlist-item-inside{
     margin: 1%;
-    width: 22%;
-    height: 26vh;
+    width: 23%;
+    height: 32vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: white solid;
-    border-radius: 50px 50px 50px 0px;
+    
 }
-#feedlist-item-inside:hover{
+/* #feedlist-item-inside:hover{
     width: 24%;
-    height: 28vh;
+    height: 30vh;
     margin:0;
+} */
+#feedlist-item-inside-of{
+    width:95%;
+    height: 95%;
+    border: white solid;
+    border-radius: 30px 30px 10px 10px;
+}
+#feedlist-item-inside-of:hover{
+    width:99%;
+    height: 99%;
+    border: white solid;
+    border-radius: 30px 30px 10px 10px;
+    
 }
