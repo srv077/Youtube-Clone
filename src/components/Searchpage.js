@@ -16,6 +16,7 @@ export default function Seachpage() {
   
  
   const handleSubmit=async(searchTerm)=>{
+    if(searchTerm!=""){
     const response = await youtube.get('search',{ params:{
         part:'snippet',
         maxResults:5,
@@ -24,6 +25,7 @@ export default function Seachpage() {
      }}); 
     setVideos(response.data.items)
     setSelectedVideo(response.data.items[0])  
+    }
   }  
   
   const onVideoSelect=(video)=>{

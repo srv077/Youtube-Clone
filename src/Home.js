@@ -26,6 +26,7 @@ export default function Home() {
   const navigate = useNavigate();
   
   const handleSubmitf=async(searchTerm)=>{
+    if(searchTerm!=""){
     const response = await youtube.get('search',{ params:{
         part:'snippet',
         maxResults:5,
@@ -35,10 +36,11 @@ export default function Home() {
     setVideos(response.data.items)
     setSelectedVideo(response.data.items[0])
     navigate('/search',{state:{video:response.data.items,selectedVideos:response.data.items[0]}})
+    }
   }  
 
   useEffect(()=>{
-    handleSubmit("Trending Movies 2022")
+    handleSubmit("classic literatures")
   },[])
 
   const onVideoSelect=(video)=>{
