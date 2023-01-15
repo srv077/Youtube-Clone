@@ -6,6 +6,7 @@ import VideoList from "./VideoList"
 import Header from './Header';
 import { useLocation } from 'react-router-dom';
 import '../style/Searchpage.css'
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Seachpage() {
@@ -13,18 +14,20 @@ export default function Seachpage() {
   const [videos,setVideos]=useState(location.state.video);
   const [selectedVideo,setSelectedVideo]=useState(location.state.selectedVideos);
 
-  
+  const navigate = useNavigate();
  
   const handleSubmit=async(searchTerm)=>{
     if(searchTerm!=""){
     const response = await youtube.get('search',{ params:{
         part:'snippet',
-        maxResults:5,
+        maxResults:50,
         key:'AIzaSyCsOVF10ZnOpV6xi7aQEsBplG4c6-rLWts',
         q: searchTerm,
      }}); 
     setVideos(response.data.items)
-    setSelectedVideo(response.data.items[0])  
+    // setSelectedVideo(response.data.items[0])  
+    navigate('/cp',{state:{video:response.data.items,selectedVideos:response.data.items[0]}})
+
     }
   }  
   

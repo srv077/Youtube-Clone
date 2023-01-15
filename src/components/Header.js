@@ -34,13 +34,13 @@ export default function Header(props) {
     <>
     <div id="header">
       <div id="hamburgerinheader" onClick={showhorinavinhead} className="header"><i className="fa-solid fa-bars fa-2x"></i></div>
-      <i style={{color:'red'}} className="fa-brands fa-youtube fa-2x"></i>
+      <i style={{color:'red'}} id="youtubeicon" className="fa-brands fa-youtube fa-2x"></i>
       <Link style={{textDecoration:'none',color:'white'}} to="/"><h2 id="header-head">YouTube</h2></Link>
       <form id="header-head-form" onSubmit={(e)=>{handleSubmit(e);return false}}>
          <input onChange={handleChange} placeholder="Search...."></input>
          <div id="form-div"><i className="fa-solid fa-magnifying-glass fa-1g" onClick={(e)=>{handleSubmit(e);return false}}></i></div>
       </form>
-      <div className="header"><i className="fa-solid fa-user fa-2x"></i></div>
+      <div className="header"><i id="headeruser" className="fa-solid fa-user fa-2x"></i></div>
     </div>
     <div id="horinavonhead">
        <div></div>

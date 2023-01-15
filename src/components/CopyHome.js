@@ -1,30 +1,22 @@
 
 import React, { useState, useEffect } from 'react'
-import youtube from './api/youtube';
-import Header from './components/Header';
-import FeedList from './components/Feedlist';
-import './App.css'
+import youtube from '../api/youtube';
+import Header from './Header';
+import FeedList from './Feedlist';
+import '../App.css'
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
 
 
 export default function Home() {
-     
+     const location=useLocation();
+     const [videos,setVideos]=useState(location.state.video);
+     const [selectedVideo,setSelectedVideo]=useState(location.state.selectedVideos);
    
-     const [videos,setVideos]=useState([]);
-     const [selectedVideo,setSelectedVideo]=useState(null);
+    //  const [videos,setVideos]=useState([]);
+    //  const [selectedVideo,setSelectedVideo]=useState(null);
  
- 
-  const handleSubmit=async(searchTerm)=>{
-    const response = await youtube.get('search',{ params:{
-        part:'snippet',
-        maxResults:53,
-        key:'AIzaSyCsOVF10ZnOpV6xi7aQEsBplG4c6-rLWts',
-        q: searchTerm,
-     }});
-    setVideos(response.data.items)
-  }  
 
   const navigate = useNavigate();
   
@@ -41,9 +33,6 @@ export default function Home() {
     // navigate('/',{state:{video:response.data.items,selectedVideos:response.data.items[0]}})
     }
   }  
-  useEffect(()=>{
-    handleSubmit("classic literatures")
-  },[])
   const onVideoSelect=(video)=>{
     setSelectedVideo(video)
     navigate('/search',{state:{video:videos,selectedVideos:video}})
